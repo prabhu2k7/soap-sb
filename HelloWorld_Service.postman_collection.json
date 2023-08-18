@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "75c442a5-07b4-49ac-a1ce-bd3d27147fb8",
+		"name": "HelloWorld_Service",
+		"description": "Hello World service\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6961004"
+	},
+	"item": [
+		{
+			"name": "sayHello",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://codenotfound.com/services/helloworld/sayHello"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <person xmlns=\"http://codenotfound.com/types/helloworld\">\n      <firstName>Prabhu</firstName>\n      <lastName>maran</lastName>\n    </person>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "http://localhost:8080/codenotfound/ws/helloworld"
+			},
+			"response": [
+				{
+					"name": "sayHello response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://codenotfound.com/services/helloworld/sayHello"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <person xmlns=\"http://codenotfound.com/types/helloworld\">\n      <firstName>string</firstName>\n      <lastName>string</lastName>\n    </person>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://localhost:8080/codenotfound/ws/helloworld"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <greeting xmlns=\"http://codenotfound.com/types/helloworld\">\n      <greeting>string</greeting>\n    </greeting>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "HelloWorld_PortBaseUrl",
+			"value": "http://localhost:8080",
+			"type": "any"
+		}
+	]
+}
